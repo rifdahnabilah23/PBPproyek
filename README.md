@@ -7,7 +7,9 @@ Kelas   : PBP B
 Link Adaptable : https://riifood.adaptable.app/
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 Jawab:
+
     Jadi ini penjelasan saya dalam menyelesaikan tugas 2 PBP.
     Langkah Pertama saya membuat Proyek ini, saya membuat satu repository lokal yang ada di laptop saya. Kemudian saya menginisiasi repositori tersebut dan mengkonfigurasikannya. Setelah itu, saya menghubungkan Repositori lokal dengan repositori yang sudah saya buat di github. Selanjutnya, saya membuat dan mengaktifkan virtual environment untuk mengisolasi package dan dependecies dari aplikasi. Saya juga membuat berkas requirements.txt yang isi dengan beberapa dependecies dan menjalankannya. Selanjutnya membuat proyek django yang diberi nama RiiFood. Riifood ini merupakan aplikasi dimana bisa pengguna dapat mengetahui informasi buah-buahan, stok, dan harganya. Setelah ini, saya mencoba mengonfigurasi proyek django saya dan menjalankannya di server. Saat sudah menjalankan Django di server, kita diarahkan ke halaman web yang mana memunculkan tampilan aplikasi. Kemudian mematikan server dan virtual environment serta menggungah proyek ini ke repositori dengan menambahkan berkas .gitignore.
 
@@ -31,19 +33,25 @@ Jawab:
 
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+
 JAWAB:
 
 
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+
 JAWAB:
+
     Virtual environment adalah suatu utilitas yang digunakan untuk menciptakan lingkungan Python virtual yang bersifat terisolasi. Dalam konteks ini, "terisolasi" merujuk kepada keadaan di mana lingkungan tersebut bersifat terkunci dan tidak dapat dijangkau dari luar. Ketika program Python beroperasi dalam virtualenv, ia memiliki modul-modulnya sendiri dan tidak dapat diakses oleh program dari luar. Jadi ketika  bekerja pada beberapa proyek yang memerlukan dependensi yang berbeda, virtual environment memungkinkan untuk memisahkan dependensi dari setiap proyek. Hal ini memastikan bahwa versi-dependensi yang berbeda tidak berinteraksi atau menyebabkan konflik satu sama lain. Tanpa virtual environment, mungkin akan mengalami kesulitan ketika proyek 1 memerlukan versi X dari suatu pustaka, sedangkan proyek 2 membutuhkan versi Y. Jadi, membuat aplikasi web berbasis Django tanpa menggunakan virtual environment tidak disarankan karena tidak dapat mengisolasi dependensi dengan baik dan membuat proyek menjadi tidak teratur.
 
 
 
 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+
 JAWAB :
+
     ------ MVC (Model-View-Controller) ------
+
     Model merupakan kumpulan kelas yang mendefinisikan logika bisnis (model bisnis) dan prosedur akses data (model data). Selain itu, ini menentukan bagaimana data dapat dimodifikasi dan dikontrol oleh aturan bisnis.
 
     View merupakan komponen UI seperti CSS, jQuery, html, dll. View hanya bertanggung jawab untuk menampilkan data yang diterima dari pengontrol sebagai hasilnya. Ini juga mengubah model menjadi UI.
@@ -52,6 +60,7 @@ JAWAB :
 
 
     ------ MVT (Model-View-Template) ------
+
     Model merupakan kumpulan kelas yang mendefinisikan logika bisnis (model bisnis) dan prosedur akses data (model data). Selain itu, ini menentukan bagaimana data dapat dimodifikasi dan dikontrol oleh aturan bisnis.
 
     View merupakan komponen UI seperti CSS, jQuery, html, dll. View hanya bertanggung jawab untuk menampilkan data yang diterima dari pengontrol sebagai hasilnya. Ini juga mengubah model menjadi UI.
@@ -59,6 +68,7 @@ JAWAB :
     Template merupakan komponen pengganti controller dalam MVC.  Ia adalah bagian dari view yang menentukan bagaimana data dari model akan ditampilkan.
 
     ------ MVVM (Model-View-ViewModel) ------
+
     Model merupakan kumpulan kelas yang mendefinisikan logika bisnis (model bisnis) dan prosedur akses data (model data). Selain itu, ini menentukan bagaimana data dapat dimodifikasi dan dikontrol oleh aturan bisnis.
 
     View merupakan komponen UI seperti CSS, jQuery, html, dll. View hanya bertanggung jawab untuk menampilkan data yang diterima dari pengontrol sebagai hasilnya. Ini juga mengubah model menjadi UI.
@@ -66,7 +76,9 @@ JAWAB :
     ViewModel bertanggung jawab untuk mengekspos metode, perintah, dan properti lain yang membantu mempertahankan status view, memanipulasi model sebagai hasil tindakan pada view, dan memicu peristiwa dalam view itu sendiri.
 
     --- Perbedaan ---
+
     MVC, MVT, dan MVVM memiliki beberapa perbedaan dalam suatu komponen diantaranya adalah sebagai berikut:
+
     1. Architecture and Layering
         - MVC menempatkan view sebagai lapisan paling atas  terintegrasi erat dengan controller, dan model berada di bawah. Hal ini dapat menyebabkan potensi masalah keamanan.
         - MVT memungkinkan akses langsung antara view dan model, dengan Template bertindak sebagai perantara.
