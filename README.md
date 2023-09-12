@@ -45,9 +45,9 @@ JAWAB :<br>
     ------ MVC (Model-View-Controller) ------ <br>
     Model merupakan kumpulan kelas yang mendefinisikan logika bisnis (model bisnis) dan prosedur akses data (model data). Selain itu, ini menentukan bagaimana data dapat dimodifikasi dan dikontrol oleh aturan bisnis.<br>
 
-    View merupakan komponen UI seperti CSS, jQuery, html, dll. View hanya bertanggung jawab untuk menampilkan data yang diterima dari pengontrol sebagai hasilnya. Ini juga mengubah model menjadi UI. <br>
+    View merupakan komponen UI seperti CSS, jQuery, html, dll. View hanya bertanggung jawab untuk menampilkan data yang diterima dari pengontrol sebagai hasilnya. Ini juga mengubah model menjadi UI. 
 
-    Controller bertanggung jawab untuk memproses permintaan yang masuk. Ia menerima masukan dari pengguna melalui view, kemudian memproses data pengguna dengan bantuan Model dan meneruskan hasilnya kembali ke view. Biasanya, ini bertindak sebagai koordinator antara view dan Model. <br>
+    Controller bertanggung jawab untuk memproses permintaan yang masuk. Ia menerima masukan dari pengguna melalui view, kemudian memproses data pengguna dengan bantuan Model dan meneruskan hasilnya kembali ke view. Biasanya, ini bertindak sebagai koordinator antara view dan Model. 
 
 
     ------ MVT (Model-View-Template) ------ 
