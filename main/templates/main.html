@@ -1,0 +1,103 @@
+<!-- <h1>Shopping List Page</h1>
+
+<h5>Name: </h5>
+<p>{{ name }}<p>
+<h5>Class: </h5>
+<p>{{ class }}<p> -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Selamat Datang di RiiFood</title>
+        <style>
+        h1 {text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>RiiFood</h1>
+        <hr />
+        <h3>Hallo {{ nama }}, Selamat Datang di RiiFood!</h3>
+    
+        <!-- Menu Pertama -->
+        <table border="1">
+            <tr>
+                <th colspan="2" bgcolor="yellow">Daftar Menu</th>
+            </tr>
+            <tr>
+                <td rowspan="4">
+                    <img src="https://m.media-amazon.com/images/I/51FhzD7lP+L._AC_UL960_QL65_.jpg" width="150" />
+                </td>
+                <td>Nama</td>
+                <td>{{ buah1 }}</td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>{{ harga1 }}</td>
+            </tr>
+            <tr>
+                <td>Stok</td>
+                <td>{{ stok1 }}</td>
+            </tr>
+            <tr>
+                <td>Keterangan</td>
+                <td>
+                    <p>{{ keterangan1 }}</p>
+                </td>
+            </tr>
+        </table>
+    
+        <!-- Menu Kedua -->
+        <table border="1">
+            <tr>
+                <td rowspan="4">
+                    <img src="https://th.bing.com/th/id/OIP.ppxA01f9G1CIyfeARSkFdwHaFq?pid=ImgDet&rs=1" width="150" />
+                </td>
+                <td>Nama</td>
+                <td>{{ buah2 }}</td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>{{ harga2 }}</td>
+            </tr>
+            <tr>
+                <td>Stok</td>
+                <td>{{ stok2 }}</td>
+            </tr>
+            <tr>
+                <td>Keterangan</td>
+                <td>
+                    <p>{{ keterangan2 }}</p>
+                </td>
+            </tr>
+        </table>
+    
+        <!-- Menu Ketiga -->
+        <table border="1">
+            <tr>
+                <td rowspan="4">
+                    <img src="https://th.bing.com/th/id/OIP.Q5Pkrqil045xdCKNPduXWAAAAA?pid=ImgDet&rs=1" width="150" />
+                </td>
+                <td>Nama</td>
+                <td>{{ buah3 }}</td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>{{ harga3 }}</td>
+            </tr>
+            <tr>
+                <td>Stok</td>
+                <td>{{ stok3 }}</td>
+            </tr>
+            <tr>
+                <td>Keterangan</td>
+                <td>
+                    <p>{{ keterangan3 }}</p>
+                </td>
+            </tr>
+        </table>
+    
+    </body>
+    </html>
+    
