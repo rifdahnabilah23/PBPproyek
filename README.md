@@ -88,6 +88,6 @@ JAWAB :<br>
 
 
 Referensi:
-https://www.dotnettricks.com/learn/designpatterns/understanding-mvc-mvp-and-mvvm-design-patterns
-https://xperti.io/blogs/mvc-vs-mvp-vs-mvvm/
-https://www.petanikode.com/python-virtualenv/
+https://www.dotnettricks.com/learn/designpatterns/understanding-mvc-mvp-and-mvvm-design-patterns <br>
+https://xperti.io/blogs/mvc-vs-mvp-vs-mvvm/ <br>
+https://www.petanikode.com/python-virtualenv/ <br>
