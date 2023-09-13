@@ -14,6 +14,7 @@ from django.shortcuts import render
 def show_main(request):
     context = {
         'nama' : 'Rifdah Nabilah',
+        'kelas' : 'PBP B',
         'buah1': 'Melon', 
         'buah2': 'Strawberry',
         'buah3': 'Alpukat',
