@@ -31,6 +31,7 @@ Jawab: <br>
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.<br>
 JAWAB: <br>
+![Foto bagan](https://github.com/rifdahnabilah23/PBPproyek/blob/82ca085c82cdf41df0a21c308b896bd5b9d0e8de/foto%20pbp.jpg) <br>
 Saat client request, dia akan masuk melalui url.py. Di dalam file ini berisi pola URL yang akan digunakan untuk meneruskan request client ke tindakan yang sesuai dengan views.py. Nah views.py ini merupakan wadah yang mengelola logika dari aplikasi yang dimana request dari client akan di proses. models.py juga akan menggabungkan data-data yang dia peroleh dari models.py dan berkas html.Selanjutnya ada models.py yang memiliki peran untuk mengakses ke data yang di butuhkan untuk memproses request dengan cara read/write dari data tersebut. Dan yang terakhir ada berkas html yang akan digunakan untuk menghasilkan tampilan halaman web yang akan dikirimkan sebagai respons kepada client. 
 
 
