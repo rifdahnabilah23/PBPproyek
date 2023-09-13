@@ -4,7 +4,7 @@ NPM     : 2206082890
 
 Kelas   : PBP B
 
-Link Adaptable : https://riifood.adaptable.app/
+Link Adaptable : https://riifood.adaptable.app/main/
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).<br>
 Jawab: <br>
