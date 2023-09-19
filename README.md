@@ -145,7 +145,8 @@ JAWAB: <br>
 
     Langkah selanjutnya saya mencoba akses kelima url pada tahap 2 menggunakan postman. Saya membuat request baru dengan method GET. Berikut ini tampilan postman jika saya mengakses: 
 <br>
-    - HTML <br>
+
+- HTML <br>
         ![Tampilan HTML](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20HTML.jpg) <br>
     - XML <br>
         ![Tampilan XML](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20XML.jpg) <br>
