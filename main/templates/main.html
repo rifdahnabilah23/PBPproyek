@@ -1,103 +1,56 @@
-<!-- <h1>Shopping List Page</h1>
+{% extends 'base.html' %}
 
-<h5>Name: </h5>
-<p>{{ name }}<p>
-<h5>Class: </h5>
-<p>{{ class }}<p> -->
+{% block content %}
+    <h1>RiiFood</h1>
+    <hr />
+    <h3>Hallo {{ nama }}, Selamat Datang di RiiFood!</h3>
+    <p>Nama : {{ nama }}</p>
+    <p>Kelas : {{ class }}</p>
+    <table border="1">
+        <tr>
+            <th colspan="3" bgcolor="yellow">Daftar Buah</th>
+        </tr>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Selamat Datang di RiiFood</title>
-    </head>
-    <body>
-
-        <h1>RiiFood</h1>
-        <hr />
-        <h3>Hallo {{ nama }}, Selamat Datang di RiiFood!</h3>
-        <p>Nama : {{ nama }}</p>
-        <p>Kelas : {{ kelas }}</p>
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
     
-        <!-- Menu Pertama -->
-        <table border="1">
+        {% for product in products %}
             <tr>
-                <th colspan="2" bgcolor="yellow">Daftar Buah</th>
-            </tr>
-            <tr>
-                <td rowspan="4">
-                    <img src="https://m.media-amazon.com/images/I/51FhzD7lP+L._AC_UL960_QL65_.jpg" width="150" />
+                <td rowspan="5"><img src= "{{ product.gambar }}" width="200" /></td>
                 </td>
                 <td>Nama</td>
-                <td>{{ buah1 }}</td>
+                <td>{{ product.name }}</td>
             </tr>
             <tr>
                 <td>Harga</td>
-                <td>{{ harga1 }}/buah</td>
+                <td>{{ product.price }}</td>
             </tr>
             <tr>
                 <td>Stok</td>
-                <td>{{ stok1 }} buah</td>
+                <td>{{ product.amount }}</td>
             </tr>
             <tr>
-                <td>Keterangan</td>
-                <td>
-                    <p>{{ keterangan1 }}</p>
-                </td>
+                <td>Deskripsi</td>
+                    <td>{{ product.description }}</td>
             </tr>
-        </table>
+            <tr>
+                <td>Data added</td>
+                <td>{{product.date_added}}</td>
+            </tr>
+        {% endfor %}
+        
+    </table>
     
-        <!-- Menu Kedua -->
-        <table border="1">
-            <tr>
-                <td rowspan="4">
-                    <img src="https://th.bing.com/th/id/OIP.ppxA01f9G1CIyfeARSkFdwHaFq?pid=ImgDet&rs=1" width="150" />
-                </td>
-                <td>Nama</td>
-                <td>{{ buah2 }}</td>
-            </tr>
-            <tr>
-                <td>Harga</td>
-                <td>{{ harga2 }}/pack</td>
-            </tr>
-            <tr>
-                <td>Stok</td>
-                <td>{{ stok2 }} pack</td>
-            </tr>
-            <tr>
-                <td>Keterangan</td>
-                <td>
-                    <p>{{ keterangan2 }}</p>
-                </td>
-            </tr>
-        </table>
+    <br />
+
+    <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
+
+    {% endblock content %}
     
-        <!-- Menu Ketiga -->
-        <table border="1">
-            <tr>
-                <td rowspan="4">
-                    <img src="https://th.bing.com/th/id/OIP.Q5Pkrqil045xdCKNPduXWAAAAA?pid=ImgDet&rs=1" width="150" />
-                </td>
-                <td>Nama</td>
-                <td>{{ buah3 }}</td>
-            </tr>
-            <tr>
-                <td>Harga</td>
-                <td>{{ harga3 }}/buah</td>
-            </tr>
-            <tr>
-                <td>Stok</td>
-                <td>{{ stok3 }} buah</td>
-            </tr>
-            <tr>
-                <td>Keterangan</td>
-                <td>
-                    <p>{{ keterangan3 }}</p>
-                </td>
-            </tr>
-        </table>
-    
-    </body>
-    </html>
-    
+
+
+        
+
