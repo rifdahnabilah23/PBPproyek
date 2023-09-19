@@ -113,7 +113,7 @@ JAWAB: <br>
     - XML digunakan terutama untuk membangun dan mengorganisir data dengan cara yang menjaga hierarki dan struktur data. Ini dirancang sebagai format universal untuk pertukaran data.
     - JSON digunakan untuk pertukaran data ringan antara server dan klien, dan erat kaitannya dengan JavaScript. Ini umum digunakan untuk mengirimkan data antara server dan aplikasi web.
     - HTML terutama digunakan untuk mendefinisikan struktur dan presentasi dokumen web, terutama untuk menampilkan konten di peramban web. Meskipun dapat berisi data, itu dirancang utamanya untuk menampilkan konten kepada pengguna. 
-<
+
     ----- Struktur Data ----- 
     - XML menyediakan struktur hierarkis dengan elemen bertingkat dan atribut. Ini memungkinkan untuk struktur data kompleks dan berlapis.
     - JSON mewakili data sebagai pasangan kunci-nilai dan array, membuatnya mudah digunakan untuk data terstruktur. Cocok untuk merepresentasikan objek dan daftar.
