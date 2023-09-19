@@ -113,19 +113,17 @@ JAWAB: <br>
     - XML digunakan terutama untuk membangun dan mengorganisir data dengan cara yang menjaga hierarki dan struktur data. Ini dirancang sebagai format universal untuk pertukaran data.
     - JSON digunakan untuk pertukaran data ringan antara server dan klien, dan erat kaitannya dengan JavaScript. Ini umum digunakan untuk mengirimkan data antara server dan aplikasi web.
     - HTML terutama digunakan untuk mendefinisikan struktur dan presentasi dokumen web, terutama untuk menampilkan konten di peramban web. Meskipun dapat berisi data, itu dirancang utamanya untuk menampilkan konten kepada pengguna. 
-<br>
-
+<
     ----- Struktur Data ----- 
     - XML menyediakan struktur hierarkis dengan elemen bertingkat dan atribut. Ini memungkinkan untuk struktur data kompleks dan berlapis.
     - JSON mewakili data sebagai pasangan kunci-nilai dan array, membuatnya mudah digunakan untuk data terstruktur. Cocok untuk merepresentasikan objek dan daftar.
     - HTML berfokus pada mendefinisikan tata letak dan presentasi konten daripada struktur data. Meskipun dapat berisi data, ia kurang memiliki kemampuan struktur data yang ketat seperti XML dan JSON. 
-<br>
 
     ----- Keterbacaan -----
     - XML mudah dibaca oleh manusia tetapi cenderung lebih panjang karena penggunaan tag dan atributnya, membuatnya kurang ringkas.
     - JSON sangat mudah dibaca dan lebih ringkas, sehingga memudahkan manusia dan mesin untuk menguraikan dan menghasilkannya.
     - HTML dirancang untuk keterbacaan manusia dan rendering di peramban web, dengan tag yang menjelaskan bagaimana konten harus ditampilkan
-<br>
+
 
 
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?<br>
@@ -139,27 +137,24 @@ JAWAB: <br>
     Jadi ini penjelasan saya dalam menyelesaikan tugas 3 PBP. <br>
 
     Langkah pertama yang harus dilakukan ialah membuat input form untuk menambahkan objek model pada app. Nah pertama saya buka cmd file Riifood dan mengaktifkan virtual environment. kemudian saya membuka folder Riifood dan mengubah path dalam urls.py yaitu path main/ menjadi '' pada varibel urlpatterns. Selanjutnya saya mengimplementasikan skeleton yang dimana berperan sebagai kerangka views untuk memastikan konsistensi dalam desain situs web. cara mengimplementasikannya yaitu pertama saya membuat folder templates pada root folder, kemudian saya tambahkan file html baru untuk template dasar yang akan digunakan sebagai kerangka umum. file html baru saya beri nama base.html dan saya tambahkan kode baru yang pernah diajarkan di tutorial 2. Selanjutnya saya membuka subdirektori riifood dan menambahkan kode di file settings.py pada variabel TEMPLATES. saya menambahkan Value pada key DIRS yang berisi BASE_DIR / 'templates' supaya berkas base.html dapat terdeteksi. Kemudian saya menambahkan kode {% extends 'base.html' %} dipaling atas dan mengapit kode yang sudah saya buat di tutorial sebelumnya dengan diawali {% block content %}
-    dan diakhiri {% endblock content %} pada berkas main.html di dalam direktori main dan di folder templates. Nah langkah selanjutnya saya akan membuat form input data. Pertama membuat berkas baru bernama forms.py pada direktori main yang digunakan untuk membuat struktur dari form agar dapat menerima data produk baru. Saya menambahkan beberapa kode yang sama seperti tutorial 2 kemarin. Namun di dalam class meta, saya menambahkan item di variabel fields yaitu amount dan gambar. Kemudian saya membuka file views.py pada direktori main dan menambahkan tiga import. Lalu saya menambahkan method create_product yang akan menerima parameter request. Method ini dapat digunakan suatu form untuk menambahkan data produk secara otomatis ketika data di kirimkan. Method ini menggunakan metode form POST. Selanjutnya saya mengubah dan menambahkan beberapa kode pada fungsi show_main. Saya menambahkan products = Product.objects.all(), dan mengubah semua data yang saya inisiasi manual menjadi satu key products dan value products yang akan mengambil seluruh object product yang tersimpan pada database. Selanjutnya saya membuka urls.py pada direktori main dan mengimport fungsi create_product serta menambahkan path urls ke dalam urlpatterns untuk mengakses fungsi yang sudah diimport tadi. Kemudian saya membuat berkas html baru pada direktori templates pada main dengan nama create_product.html yang selanjutnya saya tambahkan kode yang sebelumnya saya pelajari di tutorial 2. html ini digunakan saat menekan add new product, kemudian diisi data-data yang tersedia. Setelah itu, saya membuka lagi main.html disini saya menambahkan kode di dalam {% block content %}. Di tahap ini saya merapihkan tampilan html saya, sama seperti tugas 2 tampilan html saya namun ada button untuk add new product yang setiap saya isi, data yang ditampilkan akan di loop. Add new product ini akan mendirect tampilan awal ke halaman form.
-<br>
+    dan diakhiri {% endblock content %} pada berkas main.html di dalam direktori main dan di folder templates. Nah langkah selanjutnya saya akan membuat form input data. Pertama membuat berkas baru bernama forms.py pada direktori main yang digunakan untuk membuat struktur dari form agar dapat menerima data produk baru. Saya menambahkan beberapa kode yang sama seperti tutorial 2 kemarin. Namun di dalam class meta, saya menambahkan item di variabel fields yaitu amount dan gambar. Kemudian saya membuka file views.py pada direktori main dan menambahkan tiga import. Lalu saya menambahkan method create_product yang akan menerima parameter request. Method ini dapat digunakan suatu form untuk menambahkan data produk secara otomatis ketika data di kirimkan. Method ini menggunakan metode form POST. Selanjutnya saya mengubah dan menambahkan beberapa kode pada fungsi show_main. Saya menambahkan products = Product.objects.all(), dan mengubah semua data yang saya inisiasi manual menjadi satu key products dan value products yang akan mengambil seluruh object product yang tersimpan pada database. Selanjutnya saya membuka urls.py pada direktori main dan mengimport fungsi create_product serta menambahkan path urls ke dalam urlpatterns untuk mengakses fungsi yang sudah diimport tadi. Kemudian saya membuat berkas html baru pada direktori templates pada main dengan nama create_product.html yang selanjutnya saya tambahkan kode yang sebelumnya saya pelajari di tutorial 2. html ini digunakan saat menekan add new product, kemudian diisi data-data yang tersedia. Setelah itu, saya membuka lagi main.html disini saya menambahkan kode di dalam {% block content %}. Di tahap ini saya merapihkan tampilan html saya, sama seperti tugas 2 tampilan html saya namun ada button untuk add new product yang setiap saya isi, data yang ditampilkan akan di loop. Add new product ini akan mendirect tampilan awal ke halaman form. 
 
     Langkah Selanjutnya, bagaimana mengimplementasikan fungsi untuk mengembalikan data dalam format HTML, XML, JSON, XML by ID, dan JSON by ID. Sebelumnya saya sudah menjelaskan bagaimana menampilkan data dalam format HTML pada langkah pertama. Selanjutnya saya akan menjelaskan bagaimana saya mengembalikan data dalam bentuk XML. jadi saya menambahkan import HttpResponse dan Serializer pada bagian paling atas dari file views.py pada folder main. Setelah itu, saya membuat fungsi di dalamnya dengan nama show_xml yang menerima parameter request. Di fungsi ini di bentuk sebuah variabel yang akan menyimpan seluruh data dari hasil query pada product yang kemudian akan ngereturn HttpResponse yang terdapat hasil query dari data parameter yang sudah diserialisasi menjadi XML dan parameter content_type="application/xml". Selanjutnya saya akan menjelaskan bagaimana saya mengembalikan data dalam bentuk JSON. Masih di file dan folder yang sama yaitu views.py di main, saya membuat fungsi yang bernama show_json dengan parameter request. Di fungsi ini juga di bentuk sebuah variabel yang akan menyimpan seluruh data dari hasil query pada product yang kemudian akan ngereturn HttpResponse yang berisi hasil query dari data yang sudah diserialisasi menjadi JSON dan parameter content_type="application/json". Selanjutnya saya akan menjelaskan bagaimana saya mengembalikan data dalam bentuk XML dan JSON berdasarkan id. Masih di file dan folder yang sama, saya akan membuat dua fungsi baru yaitu fungsi show_xml_by_id dan show_json_by_id. Fungsi ini akan menerima parameter berupa request dan id produk. Kemudian di masing-masing fungsi saya menambahkan sebuah variabel data = Product.objects.filter(pk=id), dimana ini akan menyimpan hasil dari data dengan id tertentu. Dari kedua fungsi ini akan nge return HttpResponse yang didalamnya berisi data hasil query yang sudah diserialisasi menjadi JSON atau XML dan parameter content_type dengan value "application/xml" (untuk format XML) atau "application/json" (untuk format JSON). 
-<br>
 
     Langkah Selanjutnya saya akan menjelaskan tahap saya dalam membuat routing urls untuk masing-masing views dari fungsi XML, JSON, XML by ID, dan JSON by ID. pertama saya buka file urls.py yang berada pada folder main dan mengimpor fungsi-fungsi yang sudah saya buat di tahap 2. Kemudian saa menambahkan ke dalam variabel urlpattern masing-masing path url untuk mengakses fungsi yang sudah di import sebelumnya. 
-<br>
 
     Langkah selanjutnya saya mencoba akses kelima url pada tahap 2 menggunakan postman. Saya membuat request baru dengan method GET. Berikut ini tampilan postman jika saya mengakses: 
 <br>
     - HTML <br>
-        ![Tampilan HTML](Tampilan HTML.jpg) <br>
+        ![Tampilan HTML](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20HTML.jpg) <br>
     - XML <br>
-        ![Tampilan XML](Tampilan XML.jpg) <br>
+        ![Tampilan XML](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20XML.jpg) <br>
     - JSON <br>
-        ![Tampilan JSON](Tampilan JSON.jpg) <br>
+        ![Tampilan JSON](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20JSON.jpg) <br>
     - XML by ID <br>
-        ![Tampilan XML by ID](Tampilan XML by ID.jpg) <br>
+        ![Tampilan XML by ID](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20XML%20by%20ID.jpg) <br>
     - JSON by ID <br>
-        ![Tampilan JSON by ID](Tampilan JSON by ID.jpg) <br>
+        ![Tampilan JSON by ID](https://github.com/rifdahnabilah23/PBPproyek/blob/0dd40a9036ee36c44d9d38584aa6bccb0f9bd52e/Tampilan%20JSON%20by%20ID.jpg) <br>
 
 
 
