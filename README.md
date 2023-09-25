@@ -165,3 +165,149 @@ https://docs.djangoproject.com/en/4.2/topics/forms/ <br>
 https://technewuk.com/what-is-json-and-why-should-you-care/ <br>
 https://medium.com/@oazzat19/what-is-the-difference-between-html-vs-xml-vs-json-254864972bbb  <br>
 
+
+
+---------------- Tugas  4   ---------------- <br>
+
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya? <br>
+JAWAB: <br>
+    Django UserCreationForm adalah form di dalam django yang digunakan untuk membuat pengguna baru yang dapat menggunakan aplikasi web. Dia memiliki 4 bagian yaitu username, password1, dan password2 (yang umumnya digunakan untuk konfirmasi password). Untuk menggunakan UserCreationForm, kita perlu mengimport dari django.contrib.auth.forms.<br>
+    Kelebihan<br>
+    - Mudah untuk digunakan <br>
+    - Memiliki validasi bawaan untuk memastikan inputan pengguna mematuhi persyaratan yang ditentukan.<br>
+    - Dapat disesuaikan dengan desain proyek.<br>
+
+    Kekurangan <br>
+    - Memiliki batas penggunaan, UserCreationForm digunakan untuk pendaftaran yang sederhana dan tidak cocok untuk pembuataan pendaftaran yang rumit.<br>
+    - Masalah keamanan, saat menggunakan UserCreationForm kita perlu menambahkan langkah-langkah keamanan tambahan ke proses pendaftaran, seperti verifikasi CAPTCHA. <br>
+    - Tantangan Internasional, UserCreationForm mungkin tidak menangani i18n dengan mudah untuk semua bahasa. <br>
+
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting? <br>
+JAWAB: <br>
+    Autentikasi<br>
+    - Dalam proses autentikasi , identitas pengguna diperiksa untuk memberikan akses ke sistem.<br>
+    - Dalam proses autentikasi, pengguna atau orang diverifikasi.<br>
+    - Autentikasi menentukan apakah orang tersebut adalah pengguna atau bukan. Biasanya memerlukan detail login pengguna.<br>
+
+    Otorisasi<br>
+    - Saat dalam proses otorisasi, otoritas orang atau pengguna diperiksa untuk mengakses sumber daya. <br>
+    - Saat dalam proses ini, pengguna atau orang divalidasi. <br>
+    - Otorisasi mengontrol akses ke tampilan, model, dan bagian lain dari aplikasi. Ini memastikan bahwa pengguna hanya dapat mengakses data dan melakukan tindakan yang izinnya mereka miliki.<br>
+
+    Keduanya penting untuk memastikan keamanan, privasi, dan fungsionalitas aplikasi web Django, dan mereka bekerja sama untuk menciptakan sistem kontrol akses yang kuat. <br>
+
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna? <br>
+JAWAB: <br>
+    Cookies adalah potongan kecil data yang dikirimkan server ke browser web pengguna untuk mengidentifikasi dan menyimpan informasi tentang pengguna. Cookie digunakan untuk tujuan seperti membuat pengguna tetap login, mengingat preferensi pengguna, atau melacak perilaku pengguna. <br>
+    Django menggunakan cookie untuk mengelola data sesi pengguna dengan menyimpan pengidentifikasi sesi unik (ID sesi) dalam cookie pada browser pengguna. ID sesi ini digunakan untuk mengaitkan interaksi pengguna dengan server di beberapa permintaan. <br>
+
+
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? <br>
+JAWAB: <br>
+    Penggunaan cookie dalam pengembangan web secara umum aman bila diterapkan dan dikelola dengan benar.Namun,terdapat potensi risiko dan pertimbangan keamanan yang harus diwaspadai yaitu <br>
+    - Privasi Data, Menyimpan data sensitif pengguna dalam cookie tanpa enkripsi atau perlindungan yang tepat dapat memaparkannya kepada calon penyerang jika cookie disadap. <br>
+    - Cross-Site Scripting (XSS), Jika aplikasi web Anda rentan terhadap serangan XSS, penyerang mungkin menyuntikkan skrip berbahaya yang dapat membaca atau memodifikasi cookie di browser pengguna. <br>
+    - Masa Aktif Cookie, Cookie dapat memiliki waktu kedaluwarsa yang berbeda-beda, dan penting untuk mengelolanya dengan benar. Cookie yang tetap berada di perangkat pengguna tanpa batas waktu dapat menimbulkan risiko keamanan dan privasi. <br>
+
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). <br>
+JAWAB: <br>
+
+    Ceklis 1 : Mengimplementasikan fungsi registrasi, login, dan logout
+
+    - Langkah pertama saya membuat form registrasi. 
+
+        1. Saya membuka file views.py yang ada di main, kemudian mengimport redirect, UserCreationForm, dan messages.
+
+        2. Masih di dalam file itu saya membuat fungsi register yang menerima parameter request yang isinya sama seperti dalam tutorial.
+
+        3. Saya membuat file HTML baru di dalam direktori template yang ada di main dengan nama register.html. Di dalam file ini saya  isi dengan template yang tersedia di dalam tutorial.
+
+        4. Saya import fungsi register tadi ke dalam urls.py yang berada di main.
+
+        5. Kemudian saya hubungkan path url nya ke dalam urlpatterns supaya dapat mengakses fungsi register tadi.
+
+
+    - Langkah kedua saya membuat form Login.
+
+        1. Saya membuka file views.py yang ada di main, kemudian mengimport authenticate dan login.
+
+        2. Masih di dalam file itu saya membuat fungsi login yang menerima parameter request yang isinya sama seperti dalam tutorial.
+
+        3. Saya kemudian membuat file HTML baru di dalam direktori template yang ada di main dengan nama login.html. Di dalam file ini saya  isi dengan template yang tersedia di dalam tutorial.
+
+        4. Saya import fungsi login tadi ke dalam urls.py yang berada di main.
+
+        5. Kemudian saya hubungkan path url nya ke dalam urlpatterns supaya dapat mengakses fungsi login tadi.
+
+
+    - Langkah ketiga saya membuat form Logout.
+
+        1. Saya membuka file views.py yang ada di main, kemudian mengimport logout.
+
+        2. Masih di dalam file itu saya membuat fungsi logout yang menerima parameter request yang isinya sama seperti dalam tutorial.
+
+        3. Saya kemudian membuka berkas main.html yang berada dalam direktori template di main. Selanjutnya saya menambahkan beberapa kode di bawah kode add new product untuk menambah button logout.
+
+        4. Saya import fungsi logout tadi ke dalam urls.py yang berada di main.
+
+        5. Kemudian saya hubungkan path url nya ke dalam urlpatterns supaya dapat mengakses fungsi logout tadi.
+
+
+    - Setelah semuanya sudah saya buat, kemudian mengimplementasikan form di akses halaman main. Pertama saya import login_required pada views.py yg berada di main. Lalu saya tambahkan kode
+    @login_required(login_url='/login')
+    di atas fungsi show_main supaya halaman main hanya dapat diakses oleh pengguna yang sudah login.
+
+    Ceklis 4 : Menampilkan informasi pengguna sedang logged in dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+
+    - Langkah pertama menerapkan cookies
+
+        1. Saya mengimport HttpResponseRedirect, reverse, dan datetime pada berkas views.py yang ada pada main.
+
+        2. Saya kemudian menambahkan fungsi last_login pada fungsi login_user dengan cara mengganti kode yang tersedia pada blok "if user is not None" dengan kode yang tersedia di tutorial.
+
+        3. Kemudian menambahkan kode di dalam variabel context yang berada di fungsi show_main dengan kode "'last_login': request.COOKIES['last_login']"
+
+        4. Kemudian saya ubah fungsi logout_user menjadi seperti yang di tutorial.
+
+        5. Saya selanjutnya menambahkan potongan kode di main.html untuk menampilkan keterangan Sesi terakhir login dari kode yang sudah di buat sebelumnya.
+
+    - Untuk menampilkan informasi pengguna sedang login seperti username, ini berkaitan dengan ceklis 3.
+
+
+    Ceklis 3: Menghubungkan model Item dengan User
+
+    - Berikut ini adalah langkah-langkah nya
+
+        1. Saya mengimport user pada models.py yang berada di main.
+
+        2. Kemudian menambahkan model Product dengan nama user.
+
+        3. Saya mengubah kode yang berada di dalam fungsi create_product yang berada di views.py di main dengan kode yang sesuai di tutorial kemarin.
+
+        4. Kemudian saya mengubah dan menambahkan kode di fungsi show_main. Kode yang saya tambahkan ialah "products = Product.objects.filter(user=request.user)" yang saya letakan di atas variabel context. Kode yang saya ubah ialah di dalam context di key nama, saya ubah jadi "'name': request.user.username,".
+
+        5. Kemudian saya lakukan migrasi.
+
+
+    Ceklis 2 : Membuat dua akun pengguna dengan masing-masing tiga dummy data
+
+    - Berikut ini adalah langkah-langkah nya
+
+        1. Pertama saya membuat dua akun dahulu menggunakan form register.
+
+        2. Setelah itu, saya login masing-masing akun.
+
+        3. Kemudian saya membuat dummy data dengan add product sebanyak 3 kali.
+
+        4. Data-data yang sudah saya buat langsung di tampilkan di halaman utama.
+        
+        5. Data-data ini akan langsung di simpan di database program.
+
+
+Referensi:
+https://www.javatpoint.com/django-usercreationform <br>
+https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/ <br>
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies <br>
