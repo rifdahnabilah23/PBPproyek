@@ -27,8 +27,20 @@
             </tr>
             <tr>
                 <td>Stok</td>
-                <td>{{ product.amount }}</td>
-            </tr>
+                <td>
+                    {{ product.amount }}
+                    <form method="post" action="{% url 'main:add_stock' product.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="add">
+                        <button type="submit">Tambah</button>
+                    </form>
+                    <form method="post" action="{% url 'main:add_stock' product.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="subtract">
+                        <button type="submit">Kurangi</button>
+                    </form>
+                </td>
+            </tr>            
             <tr>
                 <td>Deskripsi</td>
                     <td>{{ product.description }}</td>
@@ -37,6 +49,16 @@
                 <td>Data added</td>
                 <td>{{product.date_added}}</td>
             </tr>
+            <tr>
+                <td>Hapus</td>
+                <td>
+                    <form method="post" action="{% url 'main:delete_product' product.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Hapus</button>
+                    </form>
+                </td>
+            </tr>
+            
         {% endfor %}
         
     </table>

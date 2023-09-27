@@ -303,11 +303,12 @@ JAWAB: <br>
         3. Kemudian saya membuat dummy data dengan add product sebanyak 3 kali.
 
         4. Data-data yang sudah saya buat langsung di tampilkan di halaman utama.
-        
+
         5. Data-data ini akan langsung di simpan di database program.
 
 
 Referensi:
+
 https://www.javatpoint.com/django-usercreationform <br>
 https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/ <br>
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies <br>

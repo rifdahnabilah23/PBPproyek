@@ -17,6 +17,8 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+from django.shortcuts import get_object_or_404
+
 @login_required(login_url='/login')
 def show_main(request):
     products = Product.objects.filter(user=request.user)
@@ -92,3 +94,31 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def add_stock(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'add':
+            product.amount += 1
+        elif action == 'subtract':
+            if product.amount > 0:
+                product.amount -= 1
+        product.save()
+
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def subtract_stock(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST' and product.amount > 0:
+        product.amount -= 1
+        product.save()
+
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
