@@ -10,6 +10,7 @@ from main.views import logout_user
 from main.views import add_stock
 from main.views import delete_product
 from main.views import subtract_stock
+from main.views import edit_product
 
 app_name = 'main'
 
@@ -26,4 +27,5 @@ urlpatterns = [
     path('add-stock/<int:product_id>/', add_stock, name='add_stock'),
     path('delete-product/<int:product_id>/', delete_product, name='delete_product'),
     path('subtract-stock/<int:product_id>/', subtract_stock, name='subtract_stock'),
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
 ]
