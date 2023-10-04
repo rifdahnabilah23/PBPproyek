@@ -321,17 +321,13 @@ Jawab:
 Element selector adalah salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemennya. Setiap elemen HTML memiliki nama khusus (misalnya, <p>, <h1>, <div>, dll.).
 
 Manfaat:
-
 - Efesiensi
-
 Dalam situasi tertentu, penggunaan selector elemen bisa lebih optimal dibandingkan dengan penggunaan selector class atau ID, terutama jika ingin menerapkan gaya yang sama ke sejumlah elemen tanpa harus menambahkan atribut class atau ID tambahan ke masing-masing elemen tersebut.
 
 - Kemudahan dalam Pemeliharaan
-
 Memanfaatkan selector elemen dapat menghasilkan manfaat dalam hal pemeliharaan kode CSS yang lebih sederhana. Ketika harus mengubah tampilan elemen-elemen tertentu di seluruh situs web,hanya perlu mengedit satu aturan CSS menggunakan selector elemen, dan perubahan tersebut akan otomatis berlaku pada semua elemen dengan nama yang serupa.
 
 Waktu yang tepat untuk menggunakannya:
-
 - Selector elemen sangat tepat digunakan ketika ingin mengubah tampilan elemen-elemen yang umum seperti teks paragraf, judul, atau elemen dasar lainnya di seluruh situs web.
 
 -  Ketika perlu menerapkan gaya dasar pada elemen-elemen yang tidak memiliki class atau ID yang khusus.
@@ -343,17 +339,11 @@ Waktu yang tepat untuk menggunakannya:
 Jawab:
 
 - <head> : Berisi metadata/informasi untuk dokumen
-
 - <img> : Untuk mendefinisikan gambar
-
 - <th> : Untuk mendefinisikan judul setiap sel di tabel
-
 - <td> : Untuk mendefinisikan sel dalam tabel
-
 - <nav> : untuk menandai bagian navigasi dari halaman web.
-
 - <title> : Untuk mendefinisikan judul
-
 
 3. Jelaskan perbedaan antara margin dan padding.
 
@@ -413,19 +403,15 @@ Pada tugas ini, saya menggunakan CSS untuk mengkustomisasi desain halaman web sa
 Halaman Login
 - Saya menambahkan style pada halaman login, dengan menambahkan beberapa fungsi di css untuk mengatur desainnya. Saya membuat isi login ke dalam satu kotak, lalu saya set di center. Saya juga ubah warnanya dengan kode warna agar warnanya dapat di customisasi.
 
-
 Halaman Register
 - Sama seperti halaman login, saya membuat beberapa fungsi css untuk mengatur desain saya. Saya menjadikan satu border untuk form register dan set ke center, lalu saya atur sizenya dan ubah warnanya.
-
 
 Menambahkan fitur Edit product
 - Saya juga menambahkan button untuk mengedit product, dengan cara saya menambahkan fungsi baru di views.py yang bernama edit_product, lalu saya juga membuat htmlnya di templates yang berada di main. html tersebut saya juga kustomisasi menggunakan css. Lalu saya sambungkan linknya agar dapat di akses, dengan cara import fungsi edit_product dan menambahkan path url di urls.py. Saya tambahkan buttonnya di main.html saya.
 
-
 Halaman daftar inventori
 - Pada main.html saya membuat beberapa fungsi css yang digunakan untuk mengatur desain saya. Seperti saya menambahkan fungsi untuk mengatur size tabel, ketebalan border, dll.
 - Saya juga menambahkan Navbar, untuk meletakkan add product dan logout. Saya membuat navbar mengikuti tutorial kemarin.
-
 
 
 Referensi:
