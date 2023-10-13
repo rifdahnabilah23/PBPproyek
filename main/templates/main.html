@@ -30,6 +30,16 @@
         background-color: #ae7338; /* Bonus */
     }
 
+    .custom-card .card-body,
+    .custom-card .list-group-item {
+        background-color: #ffcf90;
+    }
+
+    .card-img-top {
+        max-width: 100%;
+        height: auto;
+    }
+
 </style>
 
 
@@ -44,7 +54,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <!-- <a class="nav-link active" aria-current="page" href="#">Username : {{nama}}</a> -->
-            <a class="nav-link" href="{% url 'main:create_product' %}">Add New Product</a>
+            <!-- <a class="nav-link" href="{% url 'main:create_product' %}">Add New Product</a> -->
             <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
             </div>
         </div>
@@ -55,66 +65,146 @@
     <p>Nama : {{ nama }}</p>
     <p>Kelas : {{ class }}</p>
     <p>Kamu menyimpan {{ banyak_item }} item pada aplikasi ini </p>
-    <table>
-        <tr>
-            <th colspan="3">Daftar Buah</th>
-        </tr>
-        {% for product in products %}
-            <tr>
-                <td rowspan="6"><img src= "{{ product.gambar }}" width="300" /></td>
-                </td>
-                <td>Nama</td>
-                <td>{{ product.name }}</td>
-            </tr>
-            <tr>
-                <td>Harga</td>
-                <td>{{ product.price }}</td>
-            </tr>
-            <tr>
-                <td>Stok</td>
-                <td>
-                    {{ product.amount }}
-                    <form method="post" action="{% url 'main:add_stock' product.id %}">
+
+    <div class="row" id="product_cards"></div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
                         {% csrf_token %}
-                        <input type="hidden" name="action" value="add">
-                        <button type="submit">+</button>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="col-form-label">Price:</label>
+                            <input type="number" class="form-control" id="price" name="price"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gambar" class="col-form-label">Image URL:</label>
+                            <input type="text" class="form-control" id="gambar" name="gambar" required></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Stock:</label>
+                            <input type="number" class="form-control" id="amount" name="amount" required></input>
+                        </div>
                     </form>
-                    <form method="post" action="{% url 'main:add_stock' product.id %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="action" value="subtract">
-                        <button type="submit">-</button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>Deskripsi</td>
-                    <td>{{ product.description }}</td>
-            </tr>
-            <tr>
-                <td>Data added</td>
-                <td>{{product.date_added}}</td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td>
-                    <a href="{% url 'main:delete_product' product.id %}">
-                        <button>
-                            Hapus
-                        </button>
-                    </a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #442509;">Add Product by AJAX</button>
 
-                    <a href="{% url 'main:edit_product' product.pk %}">
-                        <button>
-                            Edit
-                        </button>
-                    </a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
 
-    <h7>Sesi terakhir login: {{ last_login }}</h7>
+    <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
 
-    <br />
+        async function refreshProducts() {
+            const productCards = document.getElementById("product_cards");
+            productCards.innerHTML = ""; // Clear existing cards
+            const products = await getProducts();
+
+            products.forEach((item) => {
+                const card = `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 custom-card"> 
+                        <img src="${item.fields.gambar}" class="card-img-top" alt="${item.fields.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.fields.name}</h5>
+                            <p class="card-text">${item.fields.description}</p>
+                            <a href="#" class="btn btn-primary" onclick="addItemAmount(${item.pk})" style="background-color: #392004;">+</a>
+                            <a href="#" class="btn btn-primary" onclick="removeItemAmount(${item.pk})" style="background-color: #392004;">-</a>
+                            <a href="#" class="btn btn-primary" onclick="removeItem(${item.pk})" style="background-color: #392004;">Hapus</a>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: ${item.fields.price}</li>
+                            <li class="list-group-item">Stok: ${item.fields.amount}</li>
+                            <li class="list-group-item">Date Added: ${item.fields.date_added}</li>
+
+                        </ul>
+                    </div>
+                </div>
+                `;
+
+                productCards.insertAdjacentHTML("beforeend", card);
+            });
+        }
+
+        refreshProducts();
+
+
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+
+            document.getElementById("form").reset()
+            return false
+        }
+        document.getElementById("button_add").onclick = addProduct
+
+
+        async function addItemAmount(pk) {
+            const formData = new FormData();
+            formData.append("id", pk);
+            fetch("{% url 'main:add_ajax' %}", {
+                method: "POST",
+                body: formData
+            }).then(() => {
+                // Setelah berhasil menambah item, perbarui tampilan produk
+                refreshProducts();
+            });
+        }
+
+        async function removeItemAmount(pk) {
+            const formData = new FormData();
+            formData.append("id", pk);
+            fetch("{% url 'main:remove_ajax' %}", {
+                method: "POST",
+                body: formData
+            }).then(() => {
+                // Setelah berhasil menghapus item, perbarui tampilan produk
+                refreshProducts();
+            });
+        }
+
+        async function removeItem(pk) {
+            const formData = new FormData();
+            formData.append("id", pk);
+            fetch("{% url 'main:remove_all_ajax' %}", {
+                method: "POST",
+                body: formData
+            }).then(() => {
+                // Setelah berhasil menghapus semua item, perbarui tampilan produk
+                refreshProducts();
+            });
+        }
+
+
+    </script>
+
+
+<h7>Sesi terakhir login: {{ last_login }}</h7>
+
+<br />
 </div>
 {% endblock content %}
+

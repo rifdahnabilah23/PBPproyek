@@ -12,6 +12,9 @@ from main.views import delete_product
 from main.views import subtract_stock
 from main.views import edit_product
 
+from main.views import get_product_json
+from main.views import add_product_ajax, add_ajax, remove_ajax, remove_all_ajax
+
 app_name = 'main'
 
 urlpatterns = [
@@ -28,4 +31,9 @@ urlpatterns = [
     path('delete-product/<int:product_id>/', delete_product, name='delete_product'),
     path('subtract-stock/<int:product_id>/', subtract_stock, name='subtract_stock'),
     path('edit-product/<int:id>', edit_product, name='edit_product'),
+    path('get-product/', get_product_json, name='get_product_json'),
+    path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
+    path('add-ajax/', add_ajax, name='add_ajax'),
+    path('remove-ajax/', remove_ajax, name='remove_ajax'),
+    path('remove-all-ajax/', remove_all_ajax, name='remove_all_ajax'),
 ]

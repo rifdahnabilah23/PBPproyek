@@ -316,102 +316,94 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies <br>
 
 -------------------- TUGAS 5 --------------------------
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
-
 Jawab:
-    Element selector adalah salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemennya. Setiap elemen HTML memiliki nama khusus (misalnya, "<p>", "<h1>", "<div>", dll.).
 
-    Manfaat:
-    - Efesiensi
-    Dalam situasi tertentu, penggunaan selector elemen bisa lebih optimal dibandingkan dengan penggunaan selector class atau ID, terutama jika ingin menerapkan gaya yang sama ke sejumlah elemen tanpa harus menambahkan atribut class atau ID tambahan ke masing-masing elemen tersebut.
-
-    - Kemudahan dalam Pemeliharaan
-    Memanfaatkan selector elemen dapat menghasilkan manfaat dalam hal pemeliharaan kode CSS yang lebih sederhana. Ketika harus mengubah tampilan elemen-elemen tertentu di seluruh situs web,hanya perlu mengedit satu aturan CSS menggunakan selector elemen, dan perubahan tersebut akan otomatis berlaku pada semua elemen dengan nama yang serupa.
-
-    Waktu yang tepat untuk menggunakannya:
-    - Selector elemen sangat tepat digunakan ketika ingin mengubah tampilan elemen-elemen yang umum seperti teks paragraf, judul, atau elemen dasar lainnya di seluruh situs web.
-
-    -  Ketika perlu menerapkan gaya dasar pada elemen-elemen yang tidak memiliki class atau ID yang khusus.
-
-    -  Jika ingin menerapkan gaya yang sangat khusus atau menghindari potensi konflik dengan gaya pada elemen-elemen lain yang memiliki nama elemen yang serupa.
+Element selector adalah salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemennya. Setiap elemen HTML memiliki nama khusus (misalnya, "<p>", "<h1>", "<div>", dll.).
+Manfaat:
+- Efesiensi
+Dalam situasi tertentu, penggunaan selector elemen bisa lebih optimal dibandingkan dengan penggunaan selector class atau ID, terutama jika ingin menerapkan gaya yang sama ke sejumlah elemen tanpa harus menambahkan atribut class atau ID tambahan ke masing-masing elemen tersebut.
+- Kemudahan dalam Pemeliharaan
+Memanfaatkan selector elemen dapat menghasilkan manfaat dalam hal pemeliharaan kode CSS yang lebih sederhana. Ketika harus mengubah tampilan elemen-elemen tertentu di seluruh situs web,hanya perlu mengedit satu aturan CSS menggunakan selector elemen, dan perubahan tersebut akan otomatis berlaku pada semua elemen dengan nama yang serupa.
+Waktu yang tepat untuk menggunakannya:
+- Selector elemen sangat tepat digunakan ketika ingin mengubah tampilan elemen-elemen yang umum seperti teks paragraf, judul, atau elemen dasar lainnya di seluruh situs web.
+-  Ketika perlu menerapkan gaya dasar pada elemen-elemen yang tidak memiliki class atau ID yang khusus.
+-  Jika ingin menerapkan gaya yang sangat khusus atau menghindari potensi konflik dengan gaya pada elemen-elemen lain yang memiliki nama elemen yang serupa.
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
-
 Jawab:
 
-    - <head> : Berisi metadata/informasi untuk dokumen
-    - <img> : Untuk mendefinisikan gambar
-    - <th> : Untuk mendefinisikan judul setiap sel di tabel
-    - <td> : Untuk mendefinisikan sel dalam tabel
-    - <nav> : untuk menandai bagian navigasi dari halaman web.
-    - <title> : Untuk mendefinisikan judul
+- <head> : Berisi metadata/informasi untuk dokumen
+- <img> : Untuk mendefinisikan gambar
+- <th> : Untuk mendefinisikan judul setiap sel di tabel
+- <td> : Untuk mendefinisikan sel dalam tabel
+- <nav> : untuk menandai bagian navigasi dari halaman web.
+- <title> : Untuk mendefinisikan judul
 
 3. Jelaskan perbedaan antara margin dan padding.
-
 Jawab:
 
-    - Margin merupakan ruang di sekitar suatu elemen. Margin digunakan untuk memindahkan elemen ke atas atau ke bawah pada halaman serta ke kiri atau ke kanan. Margin sepenuhnya transparan dan tidak memiliki warna latar belakang apa pun. Ini membersihkan area di sekitar elemen. Setiap sisi elemen memiliki ukuran margin yang dapat Anda ubah satu per satu. Dalam menciptakan celah, margin mendorong elemen-elemen yang berdekatan menjauh.
+- Margin merupakan ruang di sekitar suatu elemen. Margin digunakan untuk memindahkan elemen ke atas atau ke bawah pada halaman serta ke kiri atau ke kanan. Margin sepenuhnya transparan dan tidak memiliki warna latar belakang apa pun. Ini membersihkan area di sekitar elemen. Setiap sisi elemen memiliki ukuran margin yang dapat Anda ubah satu per satu. Dalam menciptakan celah, margin mendorong elemen-elemen yang berdekatan menjauh.
 
-    - Padding merupakan ruang antara elemen dan konten terkait di dalamnya. Ini menentukan bagaimana elemen terlihat dan ditempatkan di dalam wadah. Itu juga menunjukkan latar belakang wadah di sekitar elemen di dalamnya. Padding dapat dipengaruhi oleh warna latar belakang karena membersihkan area di sekitar konten. Untuk menciptakan celah, itu akan memperbesar ukuran elemen atau memperkecil konten di dalamnya. Secara default, ukuran elemen bertambah.
+- Padding merupakan ruang antara elemen dan konten terkait di dalamnya. Ini menentukan bagaimana elemen terlihat dan ditempatkan di dalam wadah. Itu juga menunjukkan latar belakang wadah di sekitar elemen di dalamnya. Padding dapat dipengaruhi oleh warna latar belakang karena membersihkan area di sekitar konten. Untuk menciptakan celah, itu akan memperbesar ukuran elemen atau memperkecil konten di dalamnya. Secara default, ukuran elemen bertambah.
 
 
 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
-
 Jawab:
 
-    Perbedaan
+Perbedaan
 
-    ----- Tailwind CSS -----
+----- Tailwind CSS -----
 
-    - Tailwind menawarkan widget yang telah dirancang sebelumnya untuk membangun situs dari awal dengan pengembangan UI yang cepat.
+- Tailwind menawarkan widget yang telah dirancang sebelumnya untuk membangun situs dari awal dengan pengembangan UI yang cepat.
 
-    - Tailwind CSS menggunakan serangkaian kelas utilitas untuk membuat UI yang rapi dengan lebih banyak fleksibilitas dan keunikan.
+- Tailwind CSS menggunakan serangkaian kelas utilitas untuk membuat UI yang rapi dengan lebih banyak fleksibilitas dan keunikan.
 
-    - Situs web yang dibuat menggunakan Tailwind CSS jauh lebih dapat disesuaikan.
-
-
-    ----- Bootstrap -----
-
-    - Bootstrap hadir dengan serangkaian komponen responsif seluler yang telah ditata sebelumnya dan memiliki perangkat UI yang pasti.
-
-    - Situs yang dibuat menggunakan Bootstrap mengikuti pola umum yang membuatnya terlihat identik.
-
-    - Situs web yang dibuat dengan Bootstraps dikenal karena daya tanggap dan desainnya yang sempurna, namun tampilannya umum dan serupa.
+- Situs web yang dibuat menggunakan Tailwind CSS jauh lebih dapat disesuaikan.
 
 
-    Tailwind CSS sebaiknya digunakan ketika:
+----- Bootstrap -----
 
-    - Ingin kontrol yang lebih besar atas desain
+- Bootstrap hadir dengan serangkaian komponen responsif seluler yang telah ditata sebelumnya dan memiliki perangkat UI yang pasti.
 
-    - Ingin menghindari overhead CSS yang tidak digunakan
+- Situs yang dibuat menggunakan Bootstrap mengikuti pola umum yang membuatnya terlihat identik.
 
-    - Ingin menciptakan tampilan yang unik dan kreatif
+- Situs web yang dibuat dengan Bootstraps dikenal karena daya tanggap dan desainnya yang sempurna, namun tampilannya umum dan serupa.
 
-    Bootstrap sebaiknya digunakan ketika:
 
-    - Membutuhkan solusi cepat dan mudah
+Tailwind CSS sebaiknya digunakan ketika:
 
-    - Tidak ingin menulis banyak CSS kustom
+- Ingin kontrol yang lebih besar atas desain
 
-    - Ingin kompatibilitas cross-browser yang kuat
+- Ingin menghindari overhead CSS yang tidak digunakan
+
+- Ingin menciptakan tampilan yang unik dan kreatif
+
+Bootstrap sebaiknya digunakan ketika:
+
+- Membutuhkan solusi cepat dan mudah
+
+- Tidak ingin menulis banyak CSS kustom
+
+- Ingin kompatibilitas cross-browser yang kuat
 
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
 
-    Pada tugas ini, saya menggunakan CSS untuk mengkustomisasi desain halaman web saya. 
+Pada tugas ini, saya menggunakan CSS untuk mengkustomisasi desain halaman web saya. 
 
-    Halaman Login
-    - Saya menambahkan style pada halaman login, dengan menambahkan beberapa fungsi di css untuk mengatur desainnya. Saya membuat isi login ke dalam satu kotak, lalu saya set di center. Saya juga ubah warnanya dengan kode warna agar warnanya dapat di customisasi.
+Halaman Login
+- Saya menambahkan style pada halaman login, dengan menambahkan beberapa fungsi di css untuk mengatur desainnya. Saya membuat isi login ke dalam satu kotak, lalu saya set di center. Saya juga ubah warnanya dengan kode warna agar warnanya dapat di customisasi.
 
-    Halaman Register
-    - Sama seperti halaman login, saya membuat beberapa fungsi css untuk mengatur desain saya. Saya menjadikan satu border untuk form register dan set ke center, lalu saya atur sizenya dan ubah warnanya.
+Halaman Register
+- Sama seperti halaman login, saya membuat beberapa fungsi css untuk mengatur desain saya. Saya menjadikan satu border untuk form register dan set ke center, lalu saya atur sizenya dan ubah warnanya.
 
-    Menambahkan fitur Edit product
-    - Saya juga menambahkan button untuk mengedit product, dengan cara saya menambahkan fungsi baru di views.py yang bernama edit_product, lalu saya juga membuat htmlnya di templates yang berada di main. html tersebut saya juga kustomisasi menggunakan css. Lalu saya sambungkan linknya agar dapat di akses, dengan cara import fungsi edit_product dan menambahkan path url di urls.py. Saya tambahkan buttonnya di main.html saya.
+Menambahkan fitur Edit product
+- Saya juga menambahkan button untuk mengedit product, dengan cara saya menambahkan fungsi baru di views.py yang bernama edit_product, lalu saya juga membuat htmlnya di templates yang berada di main. html tersebut saya juga kustomisasi menggunakan css. Lalu saya sambungkan linknya agar dapat di akses, dengan cara import fungsi edit_product dan menambahkan path url di urls.py. Saya tambahkan buttonnya di main.html saya.
 
-    Halaman daftar inventori
-    - Pada main.html saya membuat beberapa fungsi css yang digunakan untuk mengatur desain saya. Seperti saya menambahkan fungsi untuk mengatur size tabel, ketebalan border, dll.
-    - Saya juga menambahkan Navbar, untuk meletakkan add product dan logout. Saya membuat navbar mengikuti tutorial kemarin.
+Halaman daftar inventori
+- Pada main.html saya membuat beberapa fungsi css yang digunakan untuk mengatur desain saya. Seperti saya menambahkan fungsi untuk mengatur size tabel, ketebalan border, dll.
+- Saya juga menambahkan Navbar, untuk meletakkan add product dan logout. Saya membuat navbar mengikuti tutorial kemarin.
 
 
 Referensi:
@@ -420,3 +412,67 @@ https://www.w3schools.com/TAGs/
 
 https://www.geeksforgeeks.org/css-padding-vs-margin/
 
+
+
+
+---------- TUGAS 6 ------------
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Jawab:
+
+- Pemrograman synchronous mengacu pada pendekatan pemrograman tradisional di mana tugas dieksekusi secara berurutan (satu demi satu) sedangkan pemograman asynchronous memungkinkan beberapa tugas dieksekusi secara bersamaan tanpa memblokir thread utama atau UI. Hal ini memungkinkan tugas diselesaikan dalam urutan apa pun, yang membuatnya lebih cepat daripada pemrograman sinkronus.
+- Async bersifat multi-thread, artinya operasi atau program dapat berjalan secara paralel sedangkan Sinkronus adalah single-thread, jadi hanya satu operasi atau program yang akan berjalan dalam satu waktu.
+- Async bersifat non-blocking, artinya akan mengirimkan banyak permintaan ke server sedangkan Sinkronus bersifat blocking yaitu hanya akan mengirimkan satu permintaan ke server dalam satu waktu dan menunggu permintaan tersebut dijawab oleh server.
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Jawab:
+
+Paradigma event-driven programming adalah pendekatan dalam pemrograman di mana program merespons peristiwa atau "event" yang terjadi, seperti interaksi pengguna, input pengguna, atau perubahan keadaan sistem, daripada menjalankan urutan perintah yang tetap. Dalam paradigma ini, program mengikuti alur eksekusi yang ditentukan oleh peristiwa yang terjadi, bukan urutan yang telah ditentukan sebelumnya.
+
+Contohnya pada tugas ini: penggunaan event listener onclick pada button dengan id button_add yang akan memanggil function addProduct() bila ada event ditekan.
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+Jawab:
+
+AJAX (Asynchronous JavaScript and XML) memanfaatkan pemrograman asynchronous dalam proses transfer data (HTTP request) antara browser dan server web. Dengan demikian, browser dapat mengambil data dari server secara asynchronous tanpa mengganggu alur eksekusi kode JavaScript utama maupun melakukan pembaruan halaman browser. Sebaliknya, aplikasi akan tetap responsif dan dapat menjalankan tugas-tugas lain sambil menunggu respons dari server.
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Jawab:
+
+Fetch API
+- Tidak perlu menggunakan library external
+- Sangat sesuai untuk pembuatan situs web dengan skala kecil.
+
+jQuery
+- Perlu mengunduh library jQuery
+- Cocok untuk membangun website berukuran besar
+
+Menurut saya, saya cenderung merekomendasikan penggunaan Fetch API karena memanfaatkan perpustakaan bawaan yang sudah ada, sehingga tidak perlu mengunduh perpustakaan eksternal tambahan. Selain itu, untuk pemula, cukup dengan membangun situs web yang sederhana dan ringan.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Step 1
+- Membuat fungsi baru yaitu get_product_json di views.py
+- Mengimport from django.views.decorators.csrf import csrf_exempt pada views.py
+- Membuat fungsi baru dengan nama add_product_ajax dan menambahkan dekorator @csrf_exempt
+- Menambahkan routing di urls.py untuk fungsi get_product_json dan add_product_ajax
+- Mengapus kode table sebelumnya di ganti dengan card 
+<div class="row" id="product_cards"></div>
+- Membuat block <Script>, dan membuat fungsi baru di dalamnya dengan nama getProducts()
+- Menambahkan lagi fungsi refreshProducts() yang digunakan untuk me-refresh data produk secara asynchronous di dalam block script.
+
+Step 2
+- Menambahkan kode untuk mengimplementasikan modal (Bootstrap) pada main.html
+- Menambahkan button di bawah kode tersebut yang berfungsi untuk menampilkan modal
+- Membuat fungsi baru pada block <Script> dengan nama addProduct()
+- Menambahkan fungsi onclick pada button "Add Product" pada modal untuk menjalankan fungsi addProduct().
+
+Step 3
+- Mengimport os di dalam settings.py
+- Menambahkan kode 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+- Kemudian menjalankannya di cmd dengan perintah
+python manage.py collectstatic
+
+
+Referensi:
+https://www.mendix.com/blog/asynchronous-vs-synchronous-programming/

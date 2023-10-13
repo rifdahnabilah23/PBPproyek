@@ -16,13 +16,16 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 
 @login_required(login_url='/login')
 def show_main(request):
+    if 'last_login' not in request.COOKIES:
+        return redirect("main:login")
     products = Product.objects.filter(user=request.user)
-    banyak_item = Product.objects.filter(user=request.user).count()
+    item = Product.objects.filter(user=request.user)
+    banyak_item = len(item)
 
     context = {
         'nama' : request.user.username,
@@ -138,3 +141,67 @@ def edit_product(request, id):
 
     context = {'form': form}
     return render(request, "edit_product.html", context)
+
+def get_product_json(request):
+    product_item = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        gambar = request.POST.get("gambar")
+        amount = request.POST.get("amount")
+        user = request.user
+
+        new_product = Product(name=name, price=price, description=description, gambar=gambar, amount=amount, user=user)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+
+@csrf_exempt
+def add_ajax(request):
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        try:
+            product = Product.objects.get(pk=id)
+            product.amount += 1
+            product.save()
+            return HttpResponse(status=201)  # Status CREATED
+        except Product.DoesNotExist:
+            return HttpResponseNotFound("Product not found")
+
+    return HttpResponseNotFound()
+
+@csrf_exempt
+def remove_ajax(request):
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        try:
+            product = Product.objects.get(pk=id)
+            product.amount -= 1
+            product.save()
+            if product.amount <= 0:
+                product.delete()
+            return HttpResponse(status=201)  # Status CREATED
+        except Product.DoesNotExist:
+            return HttpResponseNotFound("Product not found")
+
+    return HttpResponseNotFound()
+
+@csrf_exempt
+def remove_all_ajax(request):
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        try:
+            product = Product.objects.get(pk=id)
+            product.delete()
+            return HttpResponse(status=201)  # Status CREATED
+        except Product.DoesNotExist:
+            return HttpResponseNotFound("Product not found")
+
+    return HttpResponseNotFound()
