@@ -14,6 +14,10 @@ from pathlib import Path
 import environ # Tambahkan kode berikut
 import os # Tambahkan kode berikut
 
+
+CSRF_TRUSTED_ORIGINS = ['https://rifdah-nabilah-tugas.pbp.cs.ui.ac.id']
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
