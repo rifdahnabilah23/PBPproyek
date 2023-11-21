@@ -13,7 +13,7 @@ from main.views import subtract_stock
 from main.views import edit_product
 
 from main.views import get_product_json
-from main.views import add_product_ajax, add_ajax, remove_ajax, remove_all_ajax
+from main.views import add_product_ajax, add_ajax, remove_ajax, remove_all_ajax, create_product_flutter
 
 app_name = 'main'
 
@@ -36,4 +36,5 @@ urlpatterns = [
     path('add-ajax/', add_ajax, name='add_ajax'),
     path('remove-ajax/', remove_ajax, name='remove_ajax'),
     path('remove-all-ajax/', remove_all_ajax, name='remove_all_ajax'),
+    path('create-flutter/', create_product_flutter, name='create_product_flutter'),
 ]
