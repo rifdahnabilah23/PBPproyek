@@ -205,3 +205,4 @@ def remove_all_ajax(request):
             return HttpResponseNotFound("Product not found")
 
     return HttpResponseNotFound()
+
